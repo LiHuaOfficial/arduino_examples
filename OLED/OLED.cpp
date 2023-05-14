@@ -7,7 +7,7 @@ OLED::OLED(SlowSoftI2CMaster _si){
 }
 
 OLED::OLED(unsigned char _sda, unsigned char _scl){
-    si = SlowSoftI2CMaster(38,36,true);
+    si = SlowSoftI2CMaster(_sda,_scl,true);
 }
 
 void OLED::OLED_WriteCommand(unsigned char Command){
