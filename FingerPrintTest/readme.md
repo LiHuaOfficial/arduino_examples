@@ -1,3 +1,3 @@
 ## Example of AS608
-ableto verify fingerprint
+able to verify fingerprint
 
