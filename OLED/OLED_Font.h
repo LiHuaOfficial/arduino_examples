@@ -2,7 +2,9 @@
 #define __OLED_FONT_H
  
 
-/*OLED字模库，宽8像素，高16像素*/
+/*OLED字模库，宽8像素，高16像素
+ 与ASCII码顺序相同
+*/
 const unsigned char OLED_F8x16[][16]=
 {
   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,

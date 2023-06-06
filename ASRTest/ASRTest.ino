@@ -3,6 +3,10 @@
 
 extern u8 ucRegVal;
 
+/*
+  需要配合串口屏使用
+  有结果会显示到串口屏中
+*/
 OLED displayer=OLED(38,36);
 LD3320 asr=LD3320();
 

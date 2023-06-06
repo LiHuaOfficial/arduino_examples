@@ -84,8 +84,12 @@ public:
   void LD_Init_ASR(void);
   u8 LD_Check_ASRBusyFlag_b2(void);
   void LD_AsrStart(void);
+
+ 
   u8 LD_AsrRun(void);
   u8 LD_AsrAddFixed(void);
+
+  ///@brief 包含LD3320启动的全流程，调用这个函数LD3320将自动启动并捕获声音
   u8 RunASR(void);
   u8 LD_GetResult(void);
 

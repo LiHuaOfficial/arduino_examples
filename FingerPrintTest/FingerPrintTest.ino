@@ -12,10 +12,12 @@ unsigned char keyNum=0;
 
 unsigned char GetKeyNum();
 
+
 void KeyInit();
-void DisplayMenu();
-void ADD_FingerPrint();
-void Verify_FingerPrint();
+/*OLED和指纹工作的三个模式*/
+void DisplayMenu();//选择界面
+void ADD_FingerPrint();//添加指纹界面
+void Verify_FingerPrint();//验证指纹界面
 
 void setup() {
   // put your setup code here, to run once:
@@ -92,7 +94,7 @@ void ADD_FingerPrint(){
         returnValue=finger.getImage();
         if(returnValue==FINGERPRINT_OK) 
         {
-          returnValue=finger.image2Tz(2);//生成特征
+          returnValue=finger.image2Tz(2);//再次生成特征
           if(returnValue==FINGERPRINT_OK)
           {
             displayer.OLED_ShowString(2, 1,"FinishGenFinger2");
@@ -122,6 +124,7 @@ void ADD_FingerPrint(){
         break;
 
         case 3:
+          /*将指纹模板储存到特定ID下*/
           unsigned char ID_NUM=0;
           displayer.OLED_ShowString(1, 1,"ID ADD MIN  SAVE");
           displayer.OLED_ShowString(2, 1,"   K5  K1   K3  ");
@@ -155,7 +158,7 @@ void ADD_FingerPrint(){
 }
 
 void Verify_FingerPrint(){
-  unsigned char cnt=0;
+  unsigned char cnt=0;////没有操作一定次数后返回至loop
   unsigned char returnValue=0;
 
   displayer.OLED_Clear();

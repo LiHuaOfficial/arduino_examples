@@ -10,7 +10,7 @@
 #define BUFFER_LENGTH 32
 #define I2C_MAXWAIT 5000
 
-
+/*这是一个用于I2C通信的类*/
 class SlowSoftI2CMaster {
  public:
  SlowSoftI2CMaster();
