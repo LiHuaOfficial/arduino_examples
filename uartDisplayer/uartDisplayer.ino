@@ -6,7 +6,7 @@
 UartDisplayer displayer=UartDisplayer();
 Joystick js=Joystick(56,55,29);
 
-const float jsToSpeed=100;
+const float jsToSpeed=100;//拿摇杆模拟量变化除这个值让点每次移动的距离适中
 
 int pointPosX=240,pointPosY=160;
 
@@ -43,6 +43,8 @@ void loop() {
 }
 
 void OneFrameDisplay(){
+  //定时器每走100ms进一次该函数的中断
+  //用于刷新屏幕
   displayer.clear();
   pointInfo="Point:"+MyString::toString(pointPosX,3)+" "+MyString::toString(pointPosY,3);
   joystickInfo="Joystick X:"+MyString::toString(jsX,4)+" Y:"+MyString::toString(jsY,4);

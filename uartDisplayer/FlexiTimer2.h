@@ -7,7 +7,7 @@
 #error FlexiTimer2 library only works on AVR architecture
 #endif
 
-
+/*定时器库*/
 namespace FlexiTimer2 {
 	extern unsigned long time_units;
 	extern void (*func)();
