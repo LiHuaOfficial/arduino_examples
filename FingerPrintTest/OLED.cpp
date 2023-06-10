@@ -110,23 +110,6 @@ void OLED::OLED_ShowSignedNum(unsigned char Line, unsigned char Column, long Num
   }
 }
 
-void OLED::OLED_ShowHexNum(unsigned char Line, unsigned char Column, unsigned long Number, unsigned char Length)
-{
-  uint8_t i, SingleNumber;
-  for (i = 0; i < Length; i++)              
-  {
-    SingleNumber = Number / OLED_Pow(16, Length - i - 1) % 16;
-    if (SingleNumber < 10)
-    {
-      OLED_ShowChar(Line, Column + i, SingleNumber + '0');
-    }
-    else
-    {
-      OLED_ShowChar(Line, Column + i, SingleNumber - 10 + 'A');
-    }
-  }
-}
-
 void OLED::OLED_Init(void)
 {
   
